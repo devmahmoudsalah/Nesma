@@ -1,0 +1,199 @@
+<!-- Page Heading/Breadcrumbs -->
+<div class="row">
+    <div class="col-lg-12">
+        <span class="pull-right page-header" style="float:right;">
+                    <button type="button" class="btn btn-primary" onclick="AddNewAction()" id="NewAction">New Action</button>
+                </span>
+        <h1 class="page-header">
+                    Actions Dashboard
+                </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#" onclick='return window.location = _spPageContextInfo.siteAbsoluteUrl'>Home</a>
+            </li>
+            <li class="active">Actions</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-tasks fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge" id="MyNewActionsCount"> </div>
+                        <div>Today’s Actions</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red ">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-tasks fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge" id="MyOverDueActionsCount"> </div>
+                        <div>Overdue Actions</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-tasks fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge" id="AllActionsCount"> </div>
+                        <div>All Actions</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow" onclick='return window.location = _spPageContextInfo.siteAbsoluteUrl + "/Pages/ActionsCalendar.aspx"'>
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-calendar fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div style="font-size:25px">Actions calendar</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-tasks fa-fw"></i> Actions
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                    Views
+                                    <span class="caret"></span>
+                                </button>
+                        <ul class="dropdown-menu pull-right" role="menu" id="Views">
+                            <li class="AllAction">
+                                <a href="#">All Actions</a>
+                            </li>
+                            <li class="NewAction">
+                                <a href="#">New Actions</a>
+                            </li>
+                            <li class="Completed">
+                                <a href="#">Completed</a>
+                            </li>
+                            <li class="Over">
+                                <a href="#">Overdue</a>
+                            </li>
+                            <li class="Open">
+                                <a href="#">Open</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>New</th>
+                                <th>Over</th>
+                                <th><i class="fa fa-eye" aria-hidden="true" data-toggle="modal" data-target="#myModal"></i></th>
+                                <th>Action Title</th>
+
+                                <th>Meeting</th>
+                                <th>Created By</th>
+                                <th>Date Assigned</th>
+                                <th>OPR</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Open</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Update Action</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="panel panel">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <form role="form">
+                                                            <div class="form-group">
+                                                                <label>Action title :</label>
+                                                                <label>Trident</label>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Persentage</label>
+                                                                <input class="form-control" placeholder="Enter Project Name">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>replay</label>
+                                                                <textarea class="form-control" rows="5" id="comment"></textarea>
+
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="alert('welcom')">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.table-responsive -->
+                <div id="morris-area-chart"></div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <hr>
+        <!-- Footer -->
+
+    </div>
+</div>
+<script src="/Style%20Library/CustomJs/Actions.js" />

@@ -1,0 +1,24 @@
+<link href="css/fullcalendar.min.css" rel="stylesheet" />
+<div class="row">
+            <div class="col-lg-12">
+<span class="pull-right page-header" style="float:right;">
+                    <button type="button" class="btn btn-primary" onclick="AddNewEvent()" id="NewEvent">New Event</button>
+                </span>
+                <h1 class="page-header">
+                    <i class="fa fa-calendar fa-fw"></i> Events
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#" onclick = 'return window.location = _spPageContextInfo.siteAbsoluteUrl'>Home</a>
+                    </li>
+                    <li class="active">  Events  </li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div id='calendar'></div>
+        </div>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+         <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.1/fullcalendar.min.js"></script>
+        <script src="/Style%20Library/CustomJs/Events.js" />
